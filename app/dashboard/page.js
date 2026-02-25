@@ -29,7 +29,8 @@ export default function Dashboard() {
       .select("athlete_id, scope, expires_at, updated_at")
       .eq("user_id", user.id)
       .maybeSingle();
-
+console.log("STRAVA DATA:", data);
+console.log("STRAVA ERROR:", error);
     if (error) {
       // se qui vedi "permission denied" => policies non ok
       setUiMsg(`DB error: ${error.message}`);
